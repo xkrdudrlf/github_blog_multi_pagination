@@ -12,7 +12,7 @@ image: /images/img1.jpg
 ## Things I've done today
 
 <ul>
-  <li>Configured Ruby & Jekyll dev env~</li>
+  <li>Configured Ruby & Jekyll dev env</li>
   <li>Ready to start building up a blog with html/css(Sass)</li>
 </ul>
 
