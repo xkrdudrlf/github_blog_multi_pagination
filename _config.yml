@@ -5,7 +5,8 @@ baseurl: ''
 
 # Global Set up for the all pages
 # :title indicates a name of a file, not the title in the tab
-permalink: :title
+# permalink: :title
+permalink: /:year/:month/:day/:title.html
 
 # Sass Set up
 sass:
@@ -93,4 +94,18 @@ pagination:
   # Optional, the default name of the index file for generated pages (e.g. 'index.html')
   # Without file extension
   indexpage: 'index'
+############################################################
+
+# for Travis CI. (shit custom gem api...) ##################
+destination: ./xkrdudrlf.github.io
+
+production_url: https://xkrdudrlf.github.io/
+source_url: https://github.com/xkrdudrlf/github_blog_multi_pagination
+
+safe: False
+lsi: False
+
+username: xkrdudrlf
+repo: github_blog_multi_pagination
+branch: main
 ############################################################

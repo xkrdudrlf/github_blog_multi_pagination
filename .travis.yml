@@ -1,0 +1,22 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+  - 2.4.2
+
+install:
+  # Install Jekyll and dependencies
+  - bundle install
+
+before_script:
+  - git config --global user.email "y0ung-gil@hanmail.net"
+  - git config --global user.name "xkrdudrlf"
+
+script: bundle exec rake site:deploy --quiet #--trace
+
+env:
+  global:
+    secure: LgTkv/AfPKkTWLSQtuH2n1tXznpTGoFT9Qh48zNJWbInDWzLK1d2U0Zj8/ipKhaOm5vggJTnrWM7YH0j5ndLsJlkbjHhA6PLSMLgvkKDckbJXAgUO7qW/Fx4VC6g1w50bFp3FObQ6QgVY2TpjiqJQpdl1cQHJBhiKW5AGVKG2dDrFSY2fJ2af8sFxsIruVttCw0lU6wDQ5FbEMLVWboIgAGoBy2TrafEpqzPk+IToVnGnsdLpSwoyKyz2RH/mj5XiVv8iXW56ISYB9fu0B56TiWSU9H17vHqDpNZcHgndCr+3+5Vy+r+VSiCyVTDxnGsPbq3Ytmtw8jryg00NExw3uedP4qohEA6XHcFYHgIv5PmtNFTqWej0hBI4mLysPZ18vn++ZHjkSEawowa71FvzlSiqAdYAQHvtIBButnjTu7LqdX0fdpTRoEilB31qSUT8BayVDW5YLlo4dkicfeTq113FqDs7TJk6HakFZW3ds6FqADw4coRfJPj7nO2J+Kl3LvylClLjSvKqBw/oMpj/qNil7Osk2qdgMMFaefwPpzUAlKVdwV3kLiw2T4FHwlwvk+Ty1PRSCrcO+FybEcsfizxEp6/2GgT0AnyD41vv/c0UEP14F6hHT4mXSkaEv600ugE9CmPaQ3UHCkpgZIc50ugNVlbzWF+SYAY1puTBa4=
+branches:
+  only:
+    - main
