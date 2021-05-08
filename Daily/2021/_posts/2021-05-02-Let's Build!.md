@@ -9,7 +9,7 @@ image: /images/img1.jpg
 
 # Blog
 
-## Things I've done todayy
+## Things I've done today
 
 <ul>
   <li>Configured Ruby & Jekyll dev environment</li>
