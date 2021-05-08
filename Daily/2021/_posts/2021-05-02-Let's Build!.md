@@ -7,6 +7,10 @@ author: Tom Tak
 image: /images/img1.jpg
 ---
 
+rvm:
+
+- 2.4.2
+
 # Blog
 
 ## Things I've done today
