@@ -2,6 +2,9 @@ sudo: false
 language: ruby
 cache: bundler
 
+rvm:
+  - 2.7.2
+
 install:
   # Install Jekyll and dependencies
   - bundle install
