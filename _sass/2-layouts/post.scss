@@ -134,5 +134,10 @@
         color: rgba(0, 0, 0, 0.609);
       }
     }
+    .currLocation {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
   }
 }
