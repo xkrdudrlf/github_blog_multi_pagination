@@ -1,0 +1,138 @@
+.post {
+  &-container {
+    padding: 1rem;
+  }
+
+  &-category {
+    display: block;
+    font-size: 1.3rem;
+    padding-left: 0.2rem;
+  }
+
+  &-title {
+    display: flex;
+    margin: 1.5rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &-profile {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-left: 5px;
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
+  }
+
+  &-date {
+    padding-left: 0.5rem;
+  }
+
+  &-content {
+    margin: 4rem 0 1.5rem;
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.8rem;
+
+    p {
+      padding: 0 1.65rem 0 0.8rem;
+      &::first-letter {
+        font-size: 2rem;
+        margin-left: 0.5rem;
+        text-transform: uppercase;
+      }
+    }
+
+    br {
+      display: block;
+      margin: 0.9rem 0;
+    }
+
+    .checkbox {
+      max-width: 900px;
+      margin: 0 3rem 1.5rem;
+      padding: 1rem;
+      background-color: $light-color;
+      line-height: 2rem;
+      border-radius: 10px;
+      .title {
+        display: inline-block;
+        font-size: 2.3rem;
+        font-weight: bold;
+        font-family: $secondary-font;
+        margin-bottom: 0.8rem;
+      }
+      .list {
+        text-align: left;
+        list-style-type: disc;
+        margin-left: 1.3rem;
+      }
+      &:last-of-type {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .yellow {
+      background-color: $yellow-color;
+    }
+    .red {
+      background-color: $red-color;
+    }
+    .blue {
+      background-color: $blue-color;
+    }
+
+    img {
+      display: block;
+      margin: 0.7rem 0;
+      object-fit: contain;
+      max-height: 300px;
+      border-radius: $border-radius-standard;
+      &:hover {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-pagination {
+    margin-top: 5rem;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 0 1rem;
+    padding-bottom: 0.5rem;
+
+    .title {
+      display: inline-block;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 1.5rem 0rem;
+    }
+    &-item {
+      list-style: none;
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+      margin-bottom: 1rem;
+      a {
+        display: flex;
+        justify-content: space-between;
+        color: rgb(39, 39, 180);
+        text-decoration: none;
+        transition: all 0.2s;
+        &:hover {
+          font-size: 1.5em;
+        }
+      }
+
+      i {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.609);
+      }
+    }
+  }
+}

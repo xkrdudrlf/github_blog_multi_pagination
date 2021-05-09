@@ -7,12 +7,12 @@
   sub: true
 - name: Computer Science
   link: /computer science
-- name: HTML/CSS
-  link: /computer science/html_css
-  sub: true
-- name: JavaScript
-  link: /computer science/javascript
-  sub: true
+# - name: HTML/CSS
+#   link: /computer science/html_css
+#   sub: true
+# - name: JavaScript
+#   link: /computer science/javascript
+#   sub: true
 - name: LeetCode
   link: /computer science/leetcode
   sub: true

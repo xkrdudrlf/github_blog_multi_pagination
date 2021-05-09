@@ -2,15 +2,72 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-<p>
-  {{ page.date | date_to_string }} - {{ page.author }}
-  <!-- prettier ignore -->
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-  <!-- prettier ignore -->
-  - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
+<article class="post-container">
+  <span class="post-category">
+    {{ page.category }} | {{ page.subCategory }}
+  </span>
 
-{{ content }}
+  <span class="post-title">{{ page.title }}</span>
+
+  <span class="post-profile">
+    <img src="/assets/images/profile-img.jpg" alt="author-img" />
+    <span> Tom Tak |</span>
+    <span class="post-date">{{ page.date | date_to_string }}</span>
+  </span>
+
+  <div class="post-content">{{ content }}</div>
+
+  <!-- Partial Pagination from the current post -->
+  <!-- prettier-ignore -->
+  {% assign baseURL = site.url | append: "/" %}
+  
+  {% assign start = 1 %}
+  {% assign end = 2 %}
+  {% assign currPage = page.previous.previous %}
+  {% unless currPage %}
+    {% assign end = 1 %}
+    {% assign currPage = page.previous %}
+  {% endunless %}
+
+  <!-- prettier-ignore -->
+  <ul class="post-pagination">
+    <span class="title">Other Posts in {{ page.category }} | {{ page.subCategory }}</span>
+  {% for i in (start..end) %}
+    {% assign currURL = currPage.id | replace: " ", "-" %}
+    {% assign currURL = baseURL | append: currURL %}
+    
+    {% if currURL != baseURL %}
+      <li class="post-pagination-item">
+        <a href="{{ currURL }}">
+          <span>{{ currPage.title }}</span>
+          <span>{{ currPage.date | date_to_string | split: " " | reverse | join: ". "}}</span>
+        </a>
+      </li>
+    {% endif %}
+    
+    {% assign currPage = currPage.next %}
+  {% endfor %}
+  
+  <li class="post-pagination-item current">
+    <i class="fas fa-chevron-right"></i> {{ page.title }}
+  </li> 
+  {% assign currPage = page %}
+  
+  {% for i in (1..2) %}
+    {% assign nextPage = currPage.next %}
+    {% assign nextURL = nextPage.id | replace: " ", "-" %}
+    {% assign nextURL = baseURL | append: nextURL %}
+    
+    {% if nextURL != baseURL %}
+      <li class="post-pagination-item">
+      <a href="{{ nextURL }}">
+        <span>{{ nextPage.title }}</span>
+        <span>{{ nextPage.date | date_to_string | split: " " | reverse | join: ". "}}</span>
+      </a>
+      </li>
+    {% endif %}
+    
+    {% assign currPage = currPage.next %}
+  {% endfor %}    
+  </ul>
+</article>
