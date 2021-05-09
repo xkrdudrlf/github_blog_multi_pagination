@@ -31,30 +31,6 @@ defaults:
 
   - scope:
       path: ""
-      type: "Computer Science"
-    values:
-      category: "Computer Science"
-
-  - scope:
-      path: ""
-      type: "LeetCode"
-    values:
-      subCategory: "LeetCode"
-
-  - scope:
-      path: ""
-      type: "Daily"
-    values:
-      category: "Daily"
-
-  - scope:
-      path: ""
-      type: "2021"
-    values:
-      subCategory: "2021"
-
-  - scope:
-      path: ""
     values:
       layout: "default"
 
