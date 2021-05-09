@@ -7,7 +7,7 @@
   {% assign currPage = "/" %}
 {% else %}
   {% assign currPage = currPage | split: "/" | slice: 1,2 |
-    join: "/" | prepend: "/" | downcase %}
+    join: "/" | prepend: "/"%}
 {% endif %}
 
 <!-- prettier-ignore -->
