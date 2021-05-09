@@ -7,7 +7,7 @@ url: "https://xkrdudrlf.github.io"
 # Global Set up for the all pages
 # :title indicates a name of a file, not the title in the tab
 # permalink: :title
-permalink: /:year/:month/:day/:title.html
+permalink: ""
 
 # Sass Set up
 sass:
