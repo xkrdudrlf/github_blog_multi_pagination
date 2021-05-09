@@ -1,12 +1,12 @@
 - name: Home
   link: /
 - name: Daily
-  link: /daily
+  link: /Daily
 - name: "2021"
-  link: /daily/2021
+  link: /Daily/2021
   sub: true
 - name: Computer Science
-  link: /computer science
+  link: /Computer Science
 # - name: HTML/CSS
 #   link: /computer science/html_css
 #   sub: true
@@ -14,5 +14,5 @@
 #   link: /computer science/javascript
 #   sub: true
 - name: LeetCode
-  link: /computer science/leetcode
+  link: /Computer Science/leetcode
   sub: true
