@@ -1,18 +1,46 @@
 <!-- Get data from _data/navigation.yml  
      And use it with site.data.navigation -->
 <!-- prettier-ignore -->
+{% assign currPage = page.url | split: "/index.html" 
+    | first | replace: "%20", " " %}
+{% if currPage == "" %}
+  {% assign currPage = "/" %}
+{% else %}
+  {% assign currPage = currPage | split: "/" | slice: 1,2 |
+    join: "/" | prepend: "/" | downcase %}
+{% endif %}
+
+<!-- prettier-ignore -->
 <nav>
   <ul class="nav-menu">
-    {% for item in site.data.navigation %}
+    {% for item in site.data.navigation %} 
+      
+      {% if item.name == "Home" %}
+        {% assign numPosts = site.posts.size %}
+      {% elsif site.categories[item.name] %}
+        {% assign numPosts = site.categories[item.name].size %}
+      {% else %}
+        {% assign numPosts = 0 %}
+      {% endif %}
+      
       {% if item.sub %}
-        <li class="nav-menu-item sub">
-        <i class="far fa-folder-open"></i><a href="{{ item.link }}"> {{ item.name}}</a>
+        {% if currPage == item.link %}
+          <li class="nav-menu-item sub current">
+        {% else %}  
+          <li class="nav-menu-item sub">
+        {% endif %}
+          <i class="far fa-folder-open"></i><a href="{{ item.link }}"> {{item.name}} ({{numPosts}})</a>      
         </li>
       {% else %}
-        <li class="nav-menu-item">
-          <i class="far fa-folder"></i><a href="{{ item.link }}"> {{ item.name}}</a>
-         </li>
+        {% if currPage == item.link %}
+          <li class="nav-menu-item current">
+        {% else %}  
+          <li class="nav-menu-item">
+        {% endif %}
+          <i class="far fa-folder"></i><a href="{{ item.link }}"> {{ item.name}} ({{numPosts}})</a>
+        </li>
       {% endif %}
+      
     {% endfor %}
   </ul>
 </nav>

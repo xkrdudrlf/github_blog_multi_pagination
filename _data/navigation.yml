@@ -1,18 +1,18 @@
 - name: Home
   link: /
 - name: Daily
-  link: /Daily
-- name: 2021
-  link: /Daily/2021
+  link: /daily
+- name: "2021"
+  link: /daily/2021
   sub: true
 - name: Computer Science
-  link: /Computer Science
+  link: /computer science
 - name: HTML/CSS
-  link: /Computer Science
+  link: /computer science/html_css
   sub: true
 - name: JavaScript
-  link: /Computer Science
+  link: /computer science/javascript
   sub: true
 - name: LeetCode
-  link: /Computer Science/LeetCode
+  link: /computer science/leetcode
   sub: true
