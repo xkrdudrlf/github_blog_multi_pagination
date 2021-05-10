@@ -10,7 +10,10 @@ header {
     font-family: $secondary-font;
     font-size: 4rem;
     letter-spacing: 2px;
-    color: $light-color;
     margin-right: 2rem;
+    a {
+      text-decoration: none;
+      color: $light-color;
+    }
   }
 }

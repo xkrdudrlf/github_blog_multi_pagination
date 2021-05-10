@@ -4,10 +4,12 @@ aside {
   margin-right: 50px;
 
   .profile {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 1rem;
     border-radius: $border-radius-standard;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     background: $light-color;
 
     img {
@@ -23,14 +25,85 @@ aside {
     &-text {
       padding: 0.5rem;
       margin-top: 1.1rem;
-
+      margin-bottom: 0.5rem;
       &-name {
-        display: block;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
         font-size: 1.4rem;
         font-weight: bold;
+        overflow: hidden;
+        &:before {
+          transform: translate(-100px);
+          transition: all 0.2s ease-in;
+          background: linear-gradient(
+            to right,
+            $blue-color 25%,
+            $red-color 50%,
+            $yellow-color 75%
+          );
+          position: absolute;
+          content: "";
+          height: 4px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+        }
+
+        &:hover:before {
+          transform: translate(0);
+        }
       }
       &-content {
-        margin-top: 0.9rem;
+        margin-top: 0.4rem;
+      }
+    }
+
+    &-contact {
+      padding: 0.5rem;
+      padding-bottom: 0;
+      .icons {
+        position: relative;
+        font-size: 1.5rem;
+        a {
+          color: black;
+        }
+        i {
+          margin-right: 1rem;
+          padding-bottom: 0.3rem;
+          &:first-child {
+            margin-left: 0.2rem;
+          }
+        }
+      }
+
+      #profile-contact-email {
+        cursor: pointer;
+
+        #copy-complete-message {
+          display: none;
+          font-size: 1rem;
+          position: absolute;
+          bottom: -3.4rem;
+          left: 0;
+          background: $yellow-color;
+          border-radius: $border-radius-standard;
+          padding: 0.5rem 0.8rem;
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 45%;
+            display: inline-block;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 20px solid $yellow-color;
+          }
+        }
+        &-text {
+          display: none;
+        }
       }
     }
   }
@@ -39,6 +112,7 @@ aside {
     .nav-menu {
       border-radius: $border-radius-standard;
       padding: 1rem;
+      padding-top: 1.5rem;
       list-style: none;
       background: $light-color;
 
