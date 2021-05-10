@@ -11,15 +11,17 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    {% include header.html %}
-    
-    <main>
-      {% include aside.html %}
+    <div class="body-container">
+      {% include header.html %}
       
-      <section>
-        {{ content }}
-      </section>
-    </main>
+      <main>
+        {% include aside.html %}
+        
+        <section>
+          {{ content }}
+        </section>
+      </main>
+    </div>
     
     
     {% comment %}

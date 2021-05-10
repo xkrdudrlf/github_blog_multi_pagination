@@ -1,15 +1,17 @@
 aside {
-  min-width: 250px;
-  max-width: 300px;
-  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 250px;
+  margin-right: 23px;
 
   .profile {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    border-radius: $border-radius-standard;
     margin-bottom: 3rem;
+    border-radius: $border-radius-standard;
     background: $light-color;
 
     img {
@@ -100,6 +102,15 @@ aside {
             border-right: 15px solid transparent;
             border-bottom: 20px solid $yellow-color;
           }
+
+          @media (max-width: 899px) {
+            & {
+              left: -3.5rem;
+            }
+            &:before {
+              left: 65%;
+            }
+          }
         }
         &-text {
           display: none;
@@ -115,6 +126,7 @@ aside {
       padding-top: 1.5rem;
       list-style: none;
       background: $light-color;
+      width: 100%;
 
       i {
         margin-right: 0.4rem;

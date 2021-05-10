@@ -16,19 +16,24 @@ body {
   font-family: $primary-font;
 }
 
+.body-container {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+
 main {
-  width: $body-content-width;
-  padding: 2rem 1.5rem;
   border-radius: $border-radius-standard;
   display: flex;
-  justify-content: space-between;
-
+  flex-direction: row;
   section {
-    min-width: 400px;
-    max-width: 1300px;
-    width: 80%;
+    width: 850px;
     border-radius: $border-radius-standard;
     background: $light-color;
-    padding: 1.5rem;
+    padding: 2rem;
+    font-size: 1rem;
   }
 }
