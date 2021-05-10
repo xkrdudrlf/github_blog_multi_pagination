@@ -14,7 +14,6 @@
 <nav>
   <ul class="nav-menu">
     {% for item in site.data.navigation %} 
-      
       {% if item.name == "Home" %}
         {% assign numPosts = site.posts.size %}
       {% elsif site.categories[item.name] %}
@@ -23,8 +22,11 @@
         {% assign numPosts = 0 %}
       {% endif %}
       
+      {% assign lowCurrPage = currPage | downcase  %}
+      {% assign lowItemLink = item.link | downcase %}
+      
       {% if item.sub %}
-        {% if currPage == item.link %}
+        {% if lowCurrPage == lowItemLink %}
           <li class="nav-menu-item sub current">
         {% else %}  
           <li class="nav-menu-item sub">
@@ -32,7 +34,7 @@
           <i class="far fa-folder-open"></i><a href="{{ item.link }}"> {{item.name}} ({{numPosts}})</a>      
         </li>
       {% else %}
-        {% if currPage == item.link %}
+        {% if lowCurrPage == lowItemLink %}
           <li class="nav-menu-item current">
         {% else %}  
           <li class="nav-menu-item">

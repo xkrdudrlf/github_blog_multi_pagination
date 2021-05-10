@@ -17,68 +17,8 @@ layout: default
 
   <div class="post-content">{{ content }}</div>
 
-  <!-- Partial Pagination from the current post -->
   <!-- prettier-ignore -->
-  {% assign baseURL = site.url | append: "/" %}
-  {% assign currCategory = page.subCategory | append: "" %}
-  {% assign categories = site.categories[currCategory] | reverse %}
-  {% assign total = -1 %}
-
-  <!-- prettier-ignore -->
-  {% for post in categories %}
-    {% assign total = total | plus: 1 %}
-    {% if post.title == page.title and post.date == page.date %}
-      {% assign indexOfCurrPage = total %}
-    {% endif %}
-  {% endfor %}
-
-  <!-- prettier-ignore -->
-  <ul class="post-pagination">
-    <span class="title">Other Posts in {{ page.category }} | {{ page.subCategory }}</span>
-    {% if indexOfCurrPage > 1 %}
-      {% assign array = "2,1" | split: "," %}  
-    {% elsif indexOfCurrPage == 1 %}
-      {% assign array = "1" | split: "," %}  
-    {% endif %}
-    
-    {% for j in array %}
-      {% assign preIndex = indexOfCurrPage | minus: j %}
-      {% assign pre = categories[preIndex] %}
-      {% assign preURL = pre.id | replace: " ","-" %}
-      {% assign preURL = baseURL | append: preURL %}
-      
-      <li class="post-pagination-item">
-        <a href="{{ preURL }}">
-          <span>{{ pre.title }}</span>
-          <span>{{ pre.date | date_to_string | split: " " | reverse | join: ". "}}</span>
-        </a>
-      </li>
-    {% endfor %}
-    
-    <li class="post-pagination-item current">
-      <i class="fas fa-chevron-right"></i> {{ page.title }}
-    </li> 
-    
-    {% assign diff = total | minus: indexOfCurrPage %}
-    {% if diff > 1 %}
-      {% assign array = "1,2" | split: "," %}  
-    {% elsif diff == 1 %}
-      {% assign array = "1" | split: "," %}  
-    {% endif %}
-    
-    {% for j in array %}
-      {% assign nextIndex = indexOfCurrPage | plus: j %}
-      {% assign nextPage = categories[nextIndex] %}
-      {% assign nextPageURL = nextPage.id | replace: " ","-" %}
-      {% assign nextPageURL = baseURL | append: nextPageURL %}
-      <li class="post-pagination-item">
-        <a href="{{ nextPageURL }}">
-          <span>{{ nextPage.title }}</span>
-          <span>{{ nextPage.date | date_to_string | split: " " | reverse | join: ". "}}</span>
-        </a>
-      </li>
-    {% endfor %}
-    
-    <span class="currLocation">{{ indexOfCurrPage | plus: 1 }} / {{ total | plus: 1 }} posts</span>
-  </ul>
+  {% include pagination_in_post.html %} 
+  
+  {% include comment_disqus.html %}
 </article>
