@@ -13,6 +13,9 @@
 # - name: JavaScript
 #   link: /computer science/javascript
 #   sub: true
+- name: Project
+  link: /Computer Science/Project
+  sub: true
 - name: LeetCode
   link: /Computer Science/LeetCode
   sub: true
