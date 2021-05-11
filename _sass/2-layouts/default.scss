@@ -37,3 +37,44 @@ main {
     font-size: 1rem;
   }
 }
+
+#scrollToTopBtn {
+  position: relative;
+  display: flex;
+  padding: 0.5rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  top: 50px;
+  height: 65px;
+  width: 65px;
+  border-radius: $border-radius-standard;
+  border: 4px solid $light-color;
+  background: linear-gradient(
+    to right top,
+    $blue-color 25%,
+    $red-color 50%,
+    $yellow-color 75%
+  );
+  color: transparent;
+  transform: rotate(135deg);
+  transition: all 0.4s;
+  cursor: pointer;
+  i {
+    font-size: 1rem;
+  }
+  .label {
+    font-family: $secondary-font;
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+  }
+  &:hover {
+    transform: rotate(0);
+    i,
+    .label {
+      z-index: 1;
+      color: black;
+    }
+  }
+}

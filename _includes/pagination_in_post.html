@@ -37,7 +37,7 @@
   {% endfor %}
   
   <li class="post-pagination-item current">
-    <i class="fas fa-chevron-right"></i> {{ page.title }}
+    <i class="fas fa-chevron-right"></i> {{ page.title | truncate: 25, '...'}}
   </li> 
   
   {% assign diff = total | minus: indexOfCurrPage %}
@@ -54,7 +54,7 @@
     {% assign nextPageURL = baseURL | append: nextPageURL %}
     <li class="post-pagination-item">
       <a href="{{ nextPageURL }}">
-        <span>{{ nextPage.title }}</span>
+        <span>{{ nextPage.title | truncate: 20, '...'}}</span>
         <span>{{ nextPage.date | date_to_string | split: " " | reverse | join: ". "}}</span>
       </a>
     </li>
