@@ -30,7 +30,7 @@
     
     <li class="post-pagination-item">
       <a href="{{ preURL }}">
-        <span>{{ pre.title }}</span>
+        <span>{{ nextPage.title | truncate: 20, '...'}}</span>
         <span>{{ pre.date | date_to_string | split: " " | reverse | join: ". "}}</span>
       </a>
     </li>
