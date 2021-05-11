@@ -141,22 +141,19 @@
   #scrollToTopBtn {
     height: 50px;
     width: 50px;
-    i {
-      font-size: 1rem;
-    }
     .label {
-      font-family: $secondary-font;
       font-size: 1.3rem;
-      letter-spacing: 0.2rem;
     }
   }
 }
 
-@media (max-width: 500px), (max-width: 1199px) {
+@media (max-width: 1199px) {
   #scrollToTopBtn {
     position: fixed;
     top: auto;
     right: 30px;
     bottom: 50px;
+    transform: rotate(0);
+    color: black;
   }
 }
