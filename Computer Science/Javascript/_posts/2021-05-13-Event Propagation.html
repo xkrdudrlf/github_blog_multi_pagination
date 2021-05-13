@@ -1,0 +1,51 @@
+---
+layout: post
+title: Event Propagation
+category: Computer Science
+subCategory: Javascript
+author: Tom Tak
+---
+
+<p></p>
+<h1>Event Propagation: Capturing and Bubbling</h1>
+<p>
+  <!-- excerpt-start -->
+  <b>Capturing Phase</b>: When we click on the element, then the parents of the
+  element firstly detects the event and start pushing the event down until the
+  event reaches the target element.
+  <br />
+  <b style="margin-left: 0.5rem">Bubbling Phase</b>: After the capturing phase,
+  bubbling phase begins, which means the event starts going up to the parent of
+  the target elements until the event reaches the top.
+</p>
+
+<br />
+
+<h1>Event Propagation in Practice</h1>
+<p>
+  .addEventListener usually captures the event during the bubbling phase. To
+  modify this so that the event can be captured during the capturing phase, set
+  the third parameter of addEventListener function to “true’. But, that is not
+  used in most cases.
+  <br />
+  <b>Inside .addEventListener:</b>
+  <br />
+  <pre>
+    * e.target: indicates where the event happened initially.
+    * e.currentTarget: indicates the target to which the eventListener is
+    * e.stopPropagation: stops further event propagation to its parents.
+  </pre>
+</p>
+
+<h1>Event Delegation</h1>
+<p>
+  Event Delegation is a technique which can be used when we have the common way
+  of handling the events with multiple elements.
+  <br />
+  Specifically, we capture and handle the event from their common parent element
+  when the target elements have the same way of event handling.
+  <br />
+  This can be an efficient solution when we have lots of target elements sharing
+  same event handling logic since it can save us from having the same multiple
+  event handler functions.
+</p>
