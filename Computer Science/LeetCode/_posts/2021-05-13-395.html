@@ -1,0 +1,117 @@
+---
+layout: post
+title: 395. Longest Substring with At Least K Repeating Characters
+category: Computer Science
+subCategory: LeetCode
+author: Tom Tak
+---
+
+<!-- prettier-ignore -->
+<h1>Description of Problem</h1>
+<p>
+  <!-- excerpt-start -->
+  This problem is to find a longest substring where each character of the
+  substring repeats at least k times in the substring.
+</p>
+<p>
+  For example, if we are given ("aabbabcc", 3) as an input, then we need to find
+  a longest substring of "aabbabcc" where each character of the substring
+  repeats at least 3 times in the substring. In this case, the answer would be
+  "aabbab" since there are at least 3 "a" and "b" in "aabbab".
+</p>
+
+<h1>Analysis Template</h1>
+<p></p>
+
+<div class="checkbox yellow">
+  <span class="title-sm">Input</span>
+  <ul class="list-no-style">
+    <li>s : a string to search for the longest substring</li>
+    <li>
+      k : the number of minimum repeat for each character in the substring
+    </li>
+  </ul>
+  <span class="title-sm m-sm">Output</span>
+  <ul class="list-no-style">
+    <li>A length of the longest substr with at least k repeating characters</li>
+  </ul>
+  <span class="title-sm m-sm">Constraints</span>
+  <ul class="list-no-style">
+    <li>1 <= s.length <= 10<sup>4</sup></li>
+    <li>1 <= k <= 10<sup>5</sup></li>
+  </ul>
+  <span class="title-sm m-sm">Edge Cases</span>
+  <ul class="list-num">
+    <li>k > s.length, return 0</li>
+    <li>k === 1, return 1</li>
+  </ul>
+  <span class="title-sm m-sm">Solution</span>
+  <ul class="list-num">
+    <li>
+      Construct a idxTable which is a hashtable containing the frequencies of
+      characters in the substring.
+    </li>
+    <li>
+      Using the idxTable, do partitioning until all fragements from partitioning
+      cannot be further partitioned.
+    </li>
+    <ul class="list-no-style">
+      <li>
+        - Characters whose frequency is less than k are considered as patitions.
+      </li>
+      <li>
+        - We do patitioning by breaking down the string into multiple fragments
+        based on partitions.
+      </li>
+      <li>
+        - Partitioning is done recursively. In other words, we do partitioning
+        again with fragements if possible and if not return the longest
+        partition [Divide and Conquer]
+      </li>
+    </ul>
+    <li>
+      Get the longest partition among all partitions from recursive partitioning
+    </li>
+    <li>If partition.length >= k, then return it. Otherwise, return 0</li>
+  </ul>
+  <span class="title-sm m-sm">Complxity Analysis</span>
+  <ul class="list">
+    <li>Time Complexity</li>
+    <ul class="list-no-style">
+      <li>
+        Time Complexity for each level partitioning is O(N) since we loop
+        through all characters in the string only once in total from all
+        recursive partitioning to construct an idxTable.
+        <br />
+        And the worst case is the case where partitioning is done 26 times with
+        each character being a partition per each partitioning level. (There are
+        26 character in English.)
+        <br />
+        <u>Therefore, Total Time Complexity is O(26 * N = 26N) </u>
+      </li>
+    </ul>
+    <li>Space Complexity</li>
+    <ul class="list-no-style">
+      <li>
+        Since the call stack would be the biggest concern in terms of the space
+        complexity in this case where we make some recursive function calls, we
+        can get the worst time complexity by calculating worst call stack space
+        case.
+        <br />
+        As already mentioned above in the time complexity analysis section,
+        there can be at most 26 partitioning level. So, it indicates that the
+        depth of the call stack is also at most 26.
+        <br />
+        <u
+          >Therefore, Total Space Complexity is O(26) - a depth of the call
+          stack</u
+        >
+      </li>
+    </ul>
+  </ul>
+</div>
+
+<h1>Solution Code</h1>
+<script src="https://gist.github.com/xkrdudrlf/d7262e3164ded3cde187397a417d3631.js"></script>
+
+<p></p>

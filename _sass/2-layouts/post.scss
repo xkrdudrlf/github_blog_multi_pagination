@@ -46,7 +46,7 @@
       font-weight: bold;
       font-family: $secondary-font;
       margin: 0.5rem 0 0.5rem;
-      padding: 0.8rem;
+      padding: 0 0.8rem 0.8rem;
     }
 
     p {
@@ -71,6 +71,13 @@
       }
     }
 
+    @mixin title-default {
+      display: inline-block;
+      font-size: 2.3em;
+      font-weight: bold;
+      font-family: $secondary-font;
+      margin-bottom: 0.8rem;
+    }
     .checkbox {
       display: flex;
       flex-direction: column;
@@ -82,17 +89,35 @@
       border-radius: 10px;
 
       .title {
-        display: inline-block;
-        font-size: 2.3em;
-        font-weight: bold;
-        font-family: $secondary-font;
-        margin-bottom: 0.8rem;
+        @include title-default;
+        &-sm {
+          @include title-default;
+          font-size: 1.8em;
+        }
+      }
+
+      .m-sm {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      @mixin list-default {
+        text-align: left;
+        margin-left: 2.2rem;
       }
 
       .list {
-        text-align: left;
+        @include list-default;
         list-style-type: disc;
-        margin-left: 1.3rem;
+        &-no-style {
+          @include list-default;
+          list-style-type: none;
+          margin-left: 1.3rem;
+        }
+        &-num {
+          @include list-default;
+          list-style-type: decimal;
+        }
       }
       &:last-of-type {
         margin-bottom: 4rem;
