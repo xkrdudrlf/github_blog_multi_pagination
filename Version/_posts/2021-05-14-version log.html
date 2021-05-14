@@ -1,0 +1,29 @@
+---
+layout: post
+title: v1.01
+category: Version
+subCategory: Version
+author: Tom Tak
+---
+
+<p></p>
+<h1>1. A board for update log</h1>
+<p>
+  <!-- excerpt-start -->
+  Added a new bulletin board for update log. Added a link to the board in the
+  header and reduced the header size by 20px.
+</p>
+<br />
+<h1>2. Change the internal logic for scrollToTop button</h1>
+<p>
+  It was implemented with window.scrollY, but now it's updated to work with
+  IntersectionObserverAPI for a better performance.
+</p>
+<p>
+  Before update:
+  <script src="https://gist.github.com/xkrdudrlf/d65d014faf4c0228c7d4b524e8f69f5a.js"></script>
+</p>
+<p>
+  After update:
+  <script src="https://gist.github.com/xkrdudrlf/247771e0057f1626448b4b6a35af227a.js"></script>
+</p>

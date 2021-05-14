@@ -1,22 +1,28 @@
 header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
-  height: 200px;
+  height: 160px;
   width: 100%;
-  margin-bottom: 2rem;
-  .banner {
-    font-family: $secondary-font;
-    font-size: 4rem;
-    letter-spacing: 2px;
-    margin-right: 2rem;
+  margin: 2rem 0;
+  padding-right: 2rem;
+  .version {
     a {
-      text-decoration: none;
       color: $light-color;
+      text-decoration: none;
       transition: all 0.5s;
-      &:hover {
-        font-size: 1.05em;
-      }
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
     }
+  }
+  .banner {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    color: $light-color;
+    font-family: $secondary-font;
+    letter-spacing: 2px;
+    font-size: 4rem;
   }
 }
