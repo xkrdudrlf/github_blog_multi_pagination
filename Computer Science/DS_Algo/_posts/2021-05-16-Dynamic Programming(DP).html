@@ -1,0 +1,63 @@
+---
+layout: post
+title: Dynamic Programming(DP)
+category: Computer Science
+subCategory: DS_Algo
+author: Tom Tak
+---
+
+<p></p>
+<div class="checkbox red">
+  <b>Discalimer</b>
+  This post is solely based on my understanding of the cohavencept.
+</div>
+<h1>What is the Dynamic Programming?</h1>
+<p>
+  <!-- excerpt-start -->
+  Dynamic Programming is a technique which solves the problem by solving its
+  subproblems in an accumulative manner with the help of memoization. In other
+  words, we do not attempt to solve the problem directly. Rather, we try to
+  solve its subproblems first so that we can use the results of subproblems for
+  solving the original problem. However, there can be many overlapping parts
+  among subproblems, so we use another technique called "memoization" to avoid
+  re-solving the already solved problem.
+</p>
+<p>
+  Memoization is a technique where we store the results of subproblems somewhere
+  so that we don't need to re-solve the problem again later when we come across
+  the subproblem again during DP.
+</p>
+
+<br />
+<h1>Top-Down vs Bottom-Up</h1>
+<p>
+  In Dynamic Programming, there are 2 possible approaches to use : Top-down and
+  Bottom-Up. Both means what their names literally describe. Top-Down is an
+  approach where we start solving the problem from the top(original problem) to
+  down(base case) while Bottom-Up is an approach where we start solving the
+  problem from the bottom to top.
+</p>
+<p>
+  Both have asymtotically the same time complexity, but considering that
+  Top-Down approach uses a recursive function using a stack, there can be a
+  limit for using this approach with regards to the max-depth of a stack. On top
+  of that, Bottom-Up approach usually has a better performance in that Top-down
+  approach has some overheads incurring from procedural calls like recursive
+  function calls. However, in unusual cases where Top-down approach does not
+  need to go through all the subproblems, Bottom-up approach can have worse
+  performance since it always goes through all the possible sub-problems unlike
+  Top-down approach.
+</p>
+
+<br />
+
+<h1>When can we use Dynamic Programming?</h1>
+<p>
+  I think that DP can be used especially when we have the problem which can be
+  solved using the results of its subproblems and subproblems also share the
+  same solution logic with the original problem.
+</p>
+<p>
+  Furthermore, if those subproblems are overlapped each other, then DP can be
+  very effective strategy with the help of memoization.
+</p>

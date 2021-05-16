@@ -10,7 +10,7 @@
 - name: Javascript
   link: /Computer Science/Javascript
   sub: true
-- name: DS and Algo
+- name: DS_Algo
   link: /Computer Science/DS_Algo
   sub: true
 - name: LeetCode
